@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nubankapp/pages/home/header.dart';
 
+import '../account/account.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -20,7 +22,8 @@ class _HomePageState extends State<HomePage> {
         color: Colors.white,
         child: Column(
           children: [
-            Header(),
+            const Header(),
+            AccountNubank(),
           ],
         ),
       )),

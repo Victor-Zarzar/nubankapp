@@ -47,19 +47,18 @@ _profile() {
 _options() {
   return Row(
     children: [
-      GetBuilder(
-        init: ControllerHomePage(),
-        builder: (ControllerHomePage) {
-          return
-        
-      ),
-      IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            MdiIcons.eyeOutline,
-            color: Colors.white,
-          )),
-          
+      GetBuilder<ControllerHomePage>(
+          init: ControllerHomePage(),
+          builder: (ControllerHomePage) {
+            return IconButton(
+                onPressed: () => ControllerHomePage.showValue(),
+                icon: Icon(
+                  ControllerHomePage.eyesValue
+                      ? MdiIcons.eyeOutline
+                      : MdiIcons.eyeOff,
+                  color: Colors.white,
+                ));
+          }),
       IconButton(
           onPressed: () {},
           icon: const Icon(
@@ -80,7 +79,7 @@ _welcome() {
   return Container(
     margin: const EdgeInsets.only(left: 20, bottom: 20),
     child: const Text(
-      'Olá, Bem Vindo!',
+      'Olá, Victor',
       style: TextStyle(
           color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
     ),
